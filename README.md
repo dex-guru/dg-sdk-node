@@ -21,7 +21,7 @@ import DexGuru, { ChainsListModel } from "dexguru-sdk";
 
 const YOUR_API_KEY = 'abc123';
 
-const sdk = new DexGuru(YOUR_API_KEY, "https://api.dev.dex.guru/");
+const sdk = new DexGuru(YOUR_API_KEY, "https://api.dev.dex.guru");
 const chains: ChainsListModel = await sdk.getAllChains();
 ```
 
@@ -50,7 +50,7 @@ import DexGuru, { ChainsListModel } from 'dexguru-sdk';
 const YOUR_API_KEY = 'abc123';
 const wallet = 'bot_wallet_address';
 
-const sdk = new DexGuru(YOUR_API_KEY, "https://api.dev.dex.guru/");
+const sdk = new DexGuru(YOUR_API_KEY, "https://api.dev.dex.guru");
 
 const response = await sdk.getWalletInfo(ChainChoices._1, wallet)
 console.log(response)

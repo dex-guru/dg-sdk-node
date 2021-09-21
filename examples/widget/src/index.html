@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body
+    style="
+      background: radial-gradient(circle, purple 0%, deeppink 70%, aqua 100%);
+    "
+  >
+    <div style="max-width: 435px; margin: 10px">
+      <dex-widget
+        id="widget-1"
+        currencyName="ETH"
+        tokenId="0x2260fac5e5542a773aa44fbcfedf7c193bc2c599-eth"
+        beginTimestamp="1613554236"
+      ></dex-widget>
+    </div>
+    <div style="max-width: 200px; margin: 10px">
+      <dex-widget
+        id="widget-2"
+        currencyName="ETH"
+        tokenId="0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c-bsc"
+        beginTimestamp="1613554236"
+      ></dex-widget>
+    </div>
+    <div style="max-width: 800px; margin: 10px">
+      <dex-widget
+        id="widget-3"
+        currencyName="ETH"
+        tokenId="0x8f0528ce5ef7b51152a59745befdd91d97091d2f-bsc"
+        beginTimestamp="1613554236"
+      ></dex-widget>
+    </div>
+    <div style="max-width: 1600px; margin: 10px">
+      <dex-widget
+        id="widget-4"
+        currencyName="ETH"
+        tokenId="0xc2132d05d31c914a87c6611c10748aeb04b58e8f-polygon"
+        beginTimestamp="1613554236"
+        theme="light"
+      ></dex-widget>
+    </div>
+
+    <script src="index.js" type="module"></script>
+    <script>
+      if (!self.customElements)
+        document.write(
+          '<script src="//unpkg.com/@webreflection/custom-elements-no-builtin"><\x2fscript>'
+        )
+    </script>
+  </body>
+</html>
