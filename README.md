@@ -62,11 +62,11 @@ The response:
 
 ```json
 {
-    wallet_address: 'bot_wallet_address',
-    volume_1m_usd=5000.123456,
-    txns_1m=999999,
-    category='bot',
-    timestamp=1621635936 # last tx timestamp
+    "wallet_address": "bot_wallet_address",
+    "volume_1m_usd": 5000.123456,
+    "txns_1m": 999999,
+    "category": "bot",
+    "timestamp": 1621635936
 }
 ```
 
