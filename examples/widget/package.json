@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "classnames": "^2.3.1",
+    "dexguru-sdk": "^1.0.1",
     "light-date": "^1.2.0",
     "numerify": "^1.2.9",
     "uland": "^0.11.0"
