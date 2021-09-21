@@ -11,7 +11,8 @@ build/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -153,3 +154,5 @@ dist
 .pnp.*
 
 # End of https://www.toptal.com/developers/gitignore/api/node,macos
+
+.idea
