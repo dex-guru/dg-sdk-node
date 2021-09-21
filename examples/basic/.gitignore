@@ -1,0 +1,13 @@
+node_modules
+.idea
+.snowpack
+build
+package-lock.json
+.env
+yarn-error.log
+lerna-debug.log
+lib
+.log
+.flycheck*
+.vscode
+.npmrc 
