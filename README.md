@@ -14,7 +14,7 @@ dexguru-sdk is a light wrapper around [dex.guru](https://dex.guru) REST API.
 
 # Getting Started
 
-Get an API key from [dev.dex.guru](https://dev.dex.guru)
+Get an API key from [developers.dex.guru](https://developers.dex.guru)
 
 ```javascript
 import DexGuru, { ChainsListModel } from "dexguru-sdk";
