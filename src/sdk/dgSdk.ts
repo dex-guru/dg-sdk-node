@@ -391,8 +391,7 @@ export default class DexGuru {
   };
   getTokensInventory = async (
     chain_id: model.ChainChoices,
-    name?: string,
-    symbol?: string,
+    search_string?: string,
     limit?: number,
     offset?: number,
     verified?: boolean
@@ -402,10 +401,10 @@ export default class DexGuru {
       this.endpoint,
       this.apiKey,
       "/v1/chain/{chain_id}/tokens",
-      { chain_id, name, symbol, limit, offset, verified }
+      { chain_id, search_string, limit, offset, verified }
     );
   };
-  getTokenInventory = async (
+  getTokenInventoryByAddress = async (
     chain_id: model.ChainChoices,
     token_address: string
   ): Promise<model.TokenInventoryModel> => {
