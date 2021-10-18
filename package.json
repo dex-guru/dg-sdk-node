@@ -1,6 +1,6 @@
 {
   "name": "dexguru-sdk",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "scripts": {
     "prepare": "tsc",
     "build": "tsc",
