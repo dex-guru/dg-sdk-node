@@ -1,34 +1,39 @@
 import axios, { Method } from "axios";
 
+const version = require("../../package.json").version;
+
 // NOTE: This file will be copied entirely to the SDK. Any additional logic, error handling etc. can be added here as long as contract is maintained
 const httpClient = async <T>(
-  method: Method,
-  endpoint: string,
-  apiKey: string,
-  path: string,
-  params: { [key: string]: string | number | boolean | undefined }
+    method: Method,
+    endpoint: string,
+    apiKey: string,
+    path: string,
+    params: { [key: string]: string | number | boolean | undefined }
 ): Promise<T> => {
-  const url = `${endpoint}${replaceParams(path, params)}`;
+    const url = `${endpoint}${replaceParams(path, params)}`;
 
-  return (
-    await axios.request<T>({
-      method,
-      url,
-      headers: { "api-key": apiKey },
-    })
-  ).data;
+    return (
+        await axios.request<T>({
+            method,
+            url,
+            headers: {
+                "api-key": apiKey,
+                "User-Agent": `JavaScript DexGuru SDK v${version}`,
+            },
+        })
+    ).data;
 };
 
 const replaceParams = (
-  url: string,
-  params: { [key: string]: string | number | boolean | undefined }
+    url: string,
+    params: { [key: string]: string | number | boolean | undefined }
 ): string => {
-  let newUrl = url;
-  Object.keys(params).forEach((k: string) => {
-    newUrl = newUrl.replace(`{${k}}`, String(params[k]));
-  });
+    let newUrl = url;
+    Object.keys(params).forEach((k: string) => {
+        newUrl = newUrl.replace(`{${k}}`, String(params[k]));
+    });
 
-  return newUrl;
+    return newUrl;
 };
 
 export default httpClient;
