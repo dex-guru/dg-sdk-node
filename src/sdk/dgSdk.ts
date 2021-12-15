@@ -7,26 +7,6 @@ export default class DexGuru {
     this.apiKey = apiKey;
     this.endpoint = endpoint;
   }
-  getAllChains = async (): Promise<model.ChainsListModel> => {
-    return client<model.ChainsListModel>(
-      "get",
-      this.endpoint,
-      this.apiKey,
-      "/v1/chain/",
-      {}
-    );
-  };
-  getChain = async (
-    chain_id: model.ChainChoices
-  ): Promise<model.ChainModel> => {
-    return client<model.ChainModel>(
-      "get",
-      this.endpoint,
-      this.apiKey,
-      "/v1/chain/{chain_id}",
-      { chain_id }
-    );
-  };
   getTransactions = async (
     chain_id: model.ChainChoices,
     amm?: model.AmmChoices,
@@ -674,6 +654,26 @@ export default class DexGuru {
       this.apiKey,
       "/v1/chain/{chain_id}/wallets/{wallet_address}",
       { chain_id, wallet_address }
+    );
+  };
+  getAllChains = async (): Promise<model.ChainsListModel> => {
+    return client<model.ChainsListModel>(
+      "get",
+      this.endpoint,
+      this.apiKey,
+      "/v1/chain",
+      {}
+    );
+  };
+  getChain = async (
+    chain_id: model.ChainChoices
+  ): Promise<model.ChainModel> => {
+    return client<model.ChainModel>(
+      "get",
+      this.endpoint,
+      this.apiKey,
+      "/v1/chain/{chain_id}",
+      { chain_id }
     );
   };
   getEvents = async (): Promise<model.EventsModelListModel> => {
