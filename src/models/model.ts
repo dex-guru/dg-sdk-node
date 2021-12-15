@@ -46,7 +46,7 @@ export interface SwapBurnMintModel {
   tokens_out: object[];
   pair_address: string;
   wallet_address: string;
-  wallet_category: string;
+  wallet_category?: string;
   transaction_type: undefined;
 }
 export interface SwapsBurnsMintsListModel {

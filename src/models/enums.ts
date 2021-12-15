@@ -2,11 +2,17 @@ export enum AmmChoices {
   all = "all",
   uniswap_v3 = "uniswap_v3",
   uniswap = "uniswap",
+  uniswap_v2 = "uniswap_v2",
   pancakeswap = "pancakeswap",
   sushiswap = "sushiswap",
   quickswap = "quickswap",
   pangolin = "pangolin",
   traderjoe = "traderjoe",
+  ubeswap = "ubeswap",
+  spookyswap = "spookyswap",
+  spiritswap = "spiritswap",
+  kyber = "kyber",
+  lydia = "lydia",
 }
 export enum CategoriesChoices {
   noob = "noob",
@@ -20,6 +26,9 @@ export enum ChainChoices {
   _56 = "56",
   _137 = "137",
   _43114 = "43114",
+  _42161 = "42161",
+  _42220 = "42220",
+  _250 = "250",
 }
 export enum OrderChoices {
   asc = "asc",
