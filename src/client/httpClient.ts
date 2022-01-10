@@ -10,28 +10,60 @@ const httpClient = async <T>(
   path: string,
   params: { [key: string]: string | number | boolean | undefined }
 ): Promise<T> => {
-  const url = `${endpoint}${replaceParams(path, params)}`;
+  const url = `${endpoint}${addParams(path, params)}`;
 
-  return (
-    await axios.request<T>({
+  console.log(url)
+
+  const request = axios.request<T>({
       method,
       url,
       headers: {
         "api-key": apiKey,
         "User-Agent": `JavaScript DexGuru SDK v${version}`,
-      },
-    })
-  ).data;
+        "Accept": 'application/json'
+      }
+  }
+  )
+
+    return request
+        .catch(e => {
+            const response = e.response
+            console.error(e)
+            console.error(`Failed with status code ${response.status}`)
+            return Promise.reject(e)
+        })
+        .then(r => r.data)
 };
 
-const replaceParams = (
+const addParams = (
   url: string,
   params: { [key: string]: string | number | boolean | undefined }
 ): string => {
-  let newUrl = url;
+
+  if(Object.keys(params).length === 0) {
+      return url
+  }
+
+  let newUrl = url
+
   Object.keys(params).forEach((k: string) => {
-    newUrl = newUrl.replace(`{${k}}`, String(params[k]));
+     // path param
+      if(newUrl.includes(`{${k}}`)) {
+          newUrl = newUrl.replace(`{${k}}`, String(params[k]));
+      } else {
+          // query param
+          if(params[k] !== undefined) {
+              if(!newUrl.includes('?')) {
+                  newUrl = `${newUrl}?`;
+              }
+              newUrl = newUrl+= `${k}=${params[k]}&`
+          }
+      }
   });
+
+  if(newUrl.endsWith('&')) {
+      newUrl.slice(0, -1)
+  }
 
   return newUrl;
 };
